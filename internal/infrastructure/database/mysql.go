@@ -9,13 +9,8 @@ import (
 	"gorm.io/gorm"
 )
 
-// Database respresentada la conexión con la base de datos
-type Database struct {
-	DB *gorm.DB
-}
-
 // Connect establece la conexión con MySQL
-func Connect() (*Database, error) {
+func Connect() (*gorm.DB, error) {
 
 	cfg := config.Get()
 
@@ -35,7 +30,5 @@ func Connect() (*Database, error) {
 
 	log.Println("Base de datos conectada correctamente")
 
-	return &Database{
-		DB: db,
-	}, nil
+	return db, nil
 }

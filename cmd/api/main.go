@@ -17,10 +17,15 @@ func main() {
 	log.Println(cfg.AppName)
 	log.Println("===================================")
 
-	_, err := database.Connect()
+	db, err := database.Connect()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Println("🚀 LAG API iniciada correctamente")
+	if err := database.AutoMigrate(db); err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(" Migraciones ejecutadas correctamente.")
+	log.Println(" LAG API iniciada correctamente")
 }
