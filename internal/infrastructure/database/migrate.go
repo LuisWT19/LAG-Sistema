@@ -11,7 +11,9 @@ func AutoMigrate(db *gorm.DB) error {
 		&entities.Permission{},
 		&entities.Role{},
 		&entities.User{},
-		// &entities.Customer{},
-		// &entities.Employee{},
+		&entities.Customer{},
+		&entities.Employee{},
+		&entities.Category{},
+		&entities.Subcategory{},
 	)
 }
