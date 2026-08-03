@@ -15,5 +15,7 @@ func AutoMigrate(db *gorm.DB) error {
 		&entities.Employee{},
 		&entities.Category{},
 		&entities.Subcategory{},
+		&entities.Product{},
+		&entities.ProductImage{},
 	)
 }
