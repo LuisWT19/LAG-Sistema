@@ -21,5 +21,9 @@ func (r *Routes) RegisterCategoryRoutes(categoryHandler *handlers.CategoryHandle
 
 	{
 		api.POST("/categories", categoryHandler.Create)
+		api.GET("/categories", categoryHandler.FindAll)
+		api.GET("/categories/:id", categoryHandler.FindByID)
+		api.PUT("/categories/:id", categoryHandler.Update)
+		api.DELETE("/categories/:id", categoryHandler.Delete)
 	}
 }
